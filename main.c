@@ -5,17 +5,17 @@
 
 
 
-void swap(char* a1, char* a2)
+void swapElementsOfString(char* a1, char* a2)
 {
   char t = *a1;
   *a1 = *a2;
   *a2 = t;
 }
 
-void reverse(char* A, int size)
+void reverseString(char* originalString, int size)
 {
-  char* a1 = A;
-  char* a2 = A + size - 1;
+  char* a1 = originalString;
+  char* a2 = originalString + size - 1;
   while (a1 < a2)
   {
     swap(a1, a2);
@@ -26,19 +26,18 @@ void reverse(char* A, int size)
 
 int main()
 {
-    while(1)
-    {
-        char A[1000];
 
-        printf("Enter the symbols:\n");
-        gets(A);
+    char originalString[1000];
 
-        int size = strlen(A);
-        reverse(A, size);
+    printf("Enter the symbols:\n");
+    gets(originalString);
 
-        printf("\n");
-        printf("Reversed string:\n%s\n\n", A);
-    }
+    int size = strlen(originalString);
+    reverse(originalString, size);
+
+    printf("\n");
+    printf("Reversed string:\n%s\n\n", originalString);
+
 
 
 
